@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -6,12 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title: string;
-  imgSrc: string;
+  favoriteAnimal: string;
 
   constructor() {
-    this.title = 'Runners';
-    this.imgSrc =
-      'https://www.nih.gov/sites/default/files/news-events/research-matters/2019/20190723-running.jpg';
+    this.favoriteAnimal = 'dog';
   }
 }

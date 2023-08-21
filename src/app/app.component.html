@@ -1,3 +1,4 @@
 <router-outlet></router-outlet>
-<h1 [innerHTML]="title"></h1>
-<img [src]="imgSrc" />
+<h2>Two-way Binding Example</h2>
+<input [(ngModel)]="favoriteAnimal" />
+<p>{{ favoriteAnimal }}</p>
