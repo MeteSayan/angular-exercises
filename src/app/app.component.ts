@@ -7,11 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title: string;
-  numberOne: number = 1;
-  numberTwo: number = 2;
-  togglePokemon: boolean = false;
+  imgSrc: string;
 
   constructor() {
-    this.title = 'Mete';
+    this.title = 'Runners';
+    this.imgSrc =
+      'https://www.nih.gov/sites/default/files/news-events/research-matters/2019/20190723-running.jpg';
   }
 }
