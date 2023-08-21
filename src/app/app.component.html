@@ -1,3 +1,20 @@
-<input type="text" #pokemonName />
-<button (click)="handleClick(pokemonName)">Click Template Ref Value</button>
-<button (click)="handleClick(pokemonName.value)">Value</button>
+<table>
+  <thead>
+    <th>Index</th>
+    <th>Name</th>
+    <th>Type</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pokemon of pokemons; let i = index">
+      <td [class.cool-bool]="pokemon.isCool">{{ pokemon.id }}</td>
+      <td>{{ pokemon.name }}</td>
+      <td>{{ pokemon.type }}</td>
+    </tr>
+    <!-- Two different ways for same thing -->
+    <tr *ngFor="let pokemon of pokemons; let i = index">
+      <td [ngClass]="{ 'cool-bool': pokemon.isCool }">{{ pokemon.id }}</td>
+      <td>{{ pokemon.name }}</td>
+      <td>{{ pokemon.type }}</td>
+    </tr>
+  </tbody>
+</table>
