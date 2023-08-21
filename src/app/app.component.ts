@@ -1,3 +1,4 @@
+import { NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
@@ -7,9 +8,13 @@ import { FormsModule } from '@angular/forms';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  favoriteAnimal: string;
+  pokemonName: string;
 
   constructor() {
-    this.favoriteAnimal = 'dog';
+    this.pokemonName = '';
+  }
+
+  handleClick(value: any) {
+    console.log(value);
   }
 }
