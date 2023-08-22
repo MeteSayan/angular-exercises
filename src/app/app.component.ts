@@ -16,11 +16,29 @@ interface Pokemon {
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  pokemonName: string = '';
+  pokemons: Pokemon[] = [
+    {
+      id: 1,
+      name: 'pikachu',
+      type: 'electric',
+      isCool: true,
+      isStylish: true,
+    },
+    {
+      id: 2,
+      name: 'squirtle',
+      type: 'water',
+      isCool: false,
+      isStylish: true,
+    },
+    {
+      id: 3,
+      name: 'charmander',
+      type: 'fire',
+      isCool: true,
+      isStylish: false,
+    },
+  ];
 
   constructor() {}
-
-  handleChange(event: any) {
-    this.pokemonName = event.target.value;
-  }
 }

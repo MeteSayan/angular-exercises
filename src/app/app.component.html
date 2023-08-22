@@ -1,16 +1,14 @@
-<input type="text" [value]="pokemonName" (input)="handleChange($event)" />
-<p>{{ pokemonName }}</p>
-
-<div *ngIf="!pokemonName">No search results found...</div>
-
-<ng-container *ngIf="pokemonName.length; then pokemonList; else noPokemon">
-</ng-container>
-
-<ng-template #pokemonList>
-  <h1>All pokemon available</h1>
-  ...
-</ng-template>
-
-<ng-template #noPokemon>
-  <h1>No pokemon available</h1>
-</ng-template>
+<table>
+  <thead>
+    <th>Index</th>
+    <th>Name</th>
+    <th>Type</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pokemon of pokemons; let i = index">
+      <td>{{ pokemon.id }}</td>
+      <td>{{ pokemon.name }}</td>
+      <td>{{ pokemon.type }}</td>
+    </tr>
+  </tbody>
+</table>
