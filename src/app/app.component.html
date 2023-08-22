@@ -18,3 +18,38 @@
     </tr>
   </tbody>
 </table>
+
+<br />
+<br />
+
+<table>
+  <thead>
+    <th>Index</th>
+    <th>Name</th>
+    <th>Type</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let pokemon of pokemons; let i = index">
+      <td
+        class="pokemon-td"
+        [style.backgroundColor]="pokemon.isStylish ? '#ffa07a' : ''"
+      >
+        {{ pokemon.id }}
+      </td>
+      <td>{{ pokemon.name }}</td>
+      <td>{{ pokemon.type }}</td>
+    </tr>
+    <!-- Two different ways for same thing -->
+
+    <tr *ngFor="let pokemon of pokemons; let i = index">
+      <td
+        class="pokemon-td"
+        [ngStyle]="{ backgroundColor: pokemon.isStylish ? '#ffa07a' : '' }"
+      >
+        {{ pokemon.id }}
+      </td>
+      <td>{{ pokemon.name }}</td>
+      <td>{{ pokemon.type }}</td>
+    </tr>
+  </tbody>
+</table>
