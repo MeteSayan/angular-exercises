@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Pokemon } from 'src/app/models/pokemon';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -6,12 +7,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pokemon-list.component.css'],
 })
 export class PokemonListComponent implements OnInit {
-  pokemon: string;
-  constructor() {
-    this.pokemon = 'pikachu';
-  }
+  pokemons: Pokemon[] = [
+    {
+      id: 1,
+      name: 'pikachu',
+      type: 'electric',
+      isCool: true,
+      isStylish: true,
+    },
+    {
+      id: 2,
+      name: 'squirtle',
+      type: 'water',
+      isCool: false,
+      isStylish: true,
+    },
+    {
+      id: 3,
+      name: 'charmander',
+      type: 'fire',
+      isCool: true,
+      isStylish: false,
+    },
+  ];
 
-  ngOnInit(): void {
-    console.log('ngOnInit fired -', this.pokemon);
-  }
+  constructor() {}
+
+  ngOnInit(): void {}
 }
