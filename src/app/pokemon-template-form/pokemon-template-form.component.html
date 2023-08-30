@@ -26,6 +26,18 @@
       [(ngModel)]="pokemon.acceptTerms"
     />Accept Terms
   </label>
+  <label for="pokemonType">
+    Pokemon Type:
+    <select name="pokemonType" [(ngModel)]="pokemon.type">
+      <option
+        *ngFor="let type of pokemonType"
+        [value]="type.value"
+        [selected]="type.value === pokemon.type"
+      >
+        {{ type.value }}
+      </option>
+    </select>
+  </label>
 </form>
 <br />
 Model: {{ pokemon | json }}
