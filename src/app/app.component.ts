@@ -25,6 +25,11 @@ export class AppComponent {
       name: 'Bad Route',
       exact: true,
     },
+    {
+      link: '/pokemon',
+      name: 'Pokemon',
+      exact: true,
+    },
   ];
   constructor() {}
 }

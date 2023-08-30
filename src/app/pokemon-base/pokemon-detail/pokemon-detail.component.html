@@ -2,5 +2,6 @@
   <td [class.cool-bool]="detail.isCool">{{ detail.id }}</td>
   <td>{{ detail.name }}</td>
   <td>{{ detail.type }}</td>
+  <button [routerLink]="['/pokemon', detail.id]">Details</button>
   <button (click)="onRemove()">Remove Pokemon</button>
 </tr>
