@@ -6,6 +6,7 @@
       type="radio"
       name="isCool"
       [value]="true"
+      #pokemonName="ngModel"
       [(ngModel)]="pokemon.isCool"
       (ngModelChange)="toggleIsCool($event)"
     />
@@ -39,7 +40,20 @@
     </select>
   </label>
 </form>
-<br />
-Model: {{ pokemon | json }}
-<br />
-FORM : {{ form.value | json }}
+<div>
+  <br />
+  Model: {{ pokemon | json }}
+  <br />
+  FORM: {{ form.value | json }}
+  <br />
+  ERROR:
+  <div *ngIf="!pokemonName.pristine">NOT PRISTINE ANYMORE IT IS DIRTY!</div>
+  <!-- 
+    $untouched The field has not been touched yet
+    $touched The field has been touched
+    $pristine The field has not been modified yet
+    $dirty The field has been modified
+    $invalid The field content is not valid
+    $valid The field content is valid
+   -->
+</div>
