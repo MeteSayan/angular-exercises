@@ -1,4 +1,4 @@
-<form #form="ngForm">
+<form #form="ngForm" (ngSubmit)="handleSubmit(form)">
   Pokemon Name:
   <input type="text" [(ngModel)]="pokemon.name" name="name" />
   <label for="isCool">
@@ -39,6 +39,7 @@
       </option>
     </select>
   </label>
+  <button type="submit" [disabled]="!form.valid">Submit</button>
 </form>
 <div>
   <br />

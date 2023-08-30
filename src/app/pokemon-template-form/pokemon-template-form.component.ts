@@ -38,4 +38,8 @@ export class PokemonTemplateFormComponent implements OnInit {
   toggleIsCool(object: any) {
     console.log(object);
   }
+
+  handleSubmit(object: any) {
+    console.log(object);
+  }
 }
