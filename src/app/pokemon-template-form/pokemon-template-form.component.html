@@ -1,12 +1,12 @@
 <form #form="ngForm">
   Pokemon Name:
   <input type="text" [(ngModel)]="pokemon.name" name="name" />
-  <label>
+  <label for="isCool">
     <input
       type="radio"
       name="isCool"
       [value]="true"
-      [ngModel]="pokemon.isCool"
+      [(ngModel)]="pokemon.isCool"
       (ngModelChange)="toggleIsCool($event)"
     />
     Pokemon is cool?
@@ -14,10 +14,17 @@
       type="radio"
       name="isCool"
       [value]="false"
-      [ngModel]="pokemon.isCool"
+      [(ngModel)]="pokemon.isCool"
       (ngModelChange)="toggleIsCool($event)"
     />
     Pokemon is Not cool?
+  </label>
+  <label for="acceptTerms">
+    <input
+      type="checkbox"
+      name="acceptTerms"
+      [(ngModel)]="pokemon.acceptTerms"
+    />Accept Terms
   </label>
 </form>
 <br />
