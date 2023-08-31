@@ -6,6 +6,7 @@ import {
   ViewChildren,
   AfterContentInit,
   ContentChildren,
+  ViewChild,
 } from '@angular/core';
 import { Pokemon } from 'src/app/models/pokemon';
 import { PokemonService } from 'src/app/services/pokemon.service';
@@ -23,6 +24,7 @@ export class PokemonListComponent
   // ViewChildren for array
   // ViewChild for single data
   @ViewChildren('pokemonRef') pokemonRef!: ElementRef;
+  @ViewChild('pokemonTh') pokemonTh!: ElementRef;
   @ContentChildren(PokemonDetailComponent) contentList!: any;
 
   constructor(private pokemonService: PokemonService) {}
@@ -32,6 +34,10 @@ export class PokemonListComponent
 
   ngAfterViewInit(): void {
     console.log('this.pokemonRef', this.pokemonRef);
+    // You can change element values with this method
+    console.log('this.pokemonTh  1', this.pokemonTh.nativeElement.innerText);
+    this.pokemonTh.nativeElement.innerText = 'Pokemon Name';
+    console.log('this.pokemonTh  2', this.pokemonTh.nativeElement.innerText);
   }
 
   handleRemove(event: Pokemon) {
