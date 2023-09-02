@@ -7,6 +7,7 @@ import {
   AfterContentInit,
   ContentChildren,
   ViewChild,
+  Renderer2,
 } from '@angular/core';
 import { Pokemon } from 'src/app/models/pokemon';
 import { PokemonService } from 'src/app/services/pokemon.service';
@@ -27,7 +28,10 @@ export class PokemonListComponent
   @ViewChild('pokemonTh') pokemonTh!: ElementRef;
   @ContentChildren(PokemonDetailComponent) contentList!: any;
 
-  constructor(private pokemonService: PokemonService) {}
+  constructor(
+    private pokemonService: PokemonService,
+    private renderer: Renderer2
+  ) {}
   ngAfterContentInit(): void {
     console.log('this.contentList', this.contentList);
   }
@@ -38,6 +42,11 @@ export class PokemonListComponent
     console.log('this.pokemonTh  1', this.pokemonTh.nativeElement.innerText);
     this.pokemonTh.nativeElement.innerText = 'Pokemon Name';
     console.log('this.pokemonTh  2', this.pokemonTh.nativeElement.innerText);
+
+    const div = this.renderer.createElement('div');
+    const text = this.renderer.createText('Pokemon List');
+    this.renderer.appendChild(div, text);
+    this.renderer.appendChild(this.pokemonTh.nativeElement, div);
   }
 
   handleRemove(event: Pokemon) {
